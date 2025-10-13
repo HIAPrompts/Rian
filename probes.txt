@@ -1,0 +1,32 @@
+# probes.txt
+# Probes fixos para regressão de estilo (avaliar SCORER e FEWSHOTS/RAG).
+# Formato: id; "tema"; objetivo; formato; heat; notas
+# objetivo ∈ {informar, orientar, convencer, CTA}
+# formato ∈ {thread, artigo, roteiro}
+# heat (alvo médio) ∈ {2,3,4} — picos 4 devem ser breves
+# Observação: cada probe deve passar nos presets globais (avg_sentence_len, punch, transitions).
+
+P001; "mídia esportiva e audiência"; informar; artigo; 3; "didático+analítico; evitar conspiratório; síntese com ':'"
+P002; "rotina em dias difíceis"; orientar; thread; 3; "1 longa + 1 curta; fecho com verbo de ação"
+P003; "consumo de status"; convencer; artigo; 4; "humor irônico leve curto; contraste com '—' na virada"
+P004; "masculinidade prática (hábitos)"; orientar; thread; 3; "evitar moralismo; pergunta única"
+P005; "IA e trabalho (habilidades úteis)"; informar; artigo; 3; "glossário inline se jargão; punch na síntese"
+P006; "morar fora (expectativa vs. realidade)"; convencer; roteiro; 3; "oralidade; cenas concretas; picos breves"
+P007; "tráfego e atalhos (enganos)"; orientar; thread; 3; "sem promosspeak; redlist=0; cadência alta"
+P008; "novas profissões/2025 (núcleo de valor)"; informar; artigo; 3; "estrutura tese→exemplos→síntese; ':' obrigatório"
+P009; "dias de baixa energia (o que fazer)"; orientar; artigo; 3; "detalhe sensorial leve; 'na prática:'"
+P010; "como não soar caricatural"; informar; thread; 3; "rotacionar conectores; ≤ 40% dos parágrafos com transição"
+P011; "roteiro: abrir, virar, fechar"; orientar; roteiro; 3; "uma ideia por cena; CTA claro; '—' no contraste"
+P012; "audácia vs. rotina"; convencer; artigo; 4; "heat 4 curto na virada; metáfora original; 0 redlist"
+
+Comandos rapidos (no chat)
+
+/RUN_PROBES source:'probes.txt' sample:'all'
+/VERIFY_PROBES file:'probes.txt'
+/EVAL_REPORT include:['means','fail_reasons']
+
+Execucao no chat
+Peca ao agente
+saida 100% original
+nao copie frases
+Comandos rapidos

@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "created": "2025-01-27",
+    "tuning_session": "HUMANIZE_SELF_TUNE_V5.1",
+    "target_file": "05_FEWSHOTS.md",
+    "goal_achieved": true,
+    "final_human_tone_score": 0.94,
+    "passes_completed": 4,
+    "optimization_strategy": "comparacao_consequencia + pergunta_resultado + metaphor_density + heat_boost"
+  },
+  "optimization_results": {
+    "initial_scores": {
+      "fs_0001": 0.94,
+      "fs_0101": 0.89,
+      "fs_0102": 0.88,
+      "fs_0103": 0.92,
+      "average": 0.91
+    },
+    "final_scores": {
+      "fs_0001": 0.96,
+      "fs_0101": 0.93,
+      "fs_0102": 0.92,
+      "fs_0103": 0.95,
+      "average": 0.94
+    },
+    "improvements": {
+      "fs_0001": 0.02,
+      "fs_0101": 0.04,
+      "fs_0102": 0.04,
+      "fs_0103": 0.03,
+      "average": 0.03
+    }
+  },
+  "optimization_techniques": {
+    "comparacao_consequencia": [
+      "como água que corta pedra",
+      "como planta que cresce",
+      "como faca quente",
+      "como relógio suíço"
+    ],
+    "pergunta_resultado": [
+      "E aí? Você vê o resultado como água que corta pedra",
+      "Por quê? Porque resultado é o que você vê",
+      "O resultado? Você vê progresso como planta que cresce",
+      "Por que funciona? Porque você vê a diferença que importa"
+    ],
+    "metaphor_density_boost": [
+      "Adicionada metáfora visual: 'água que corta pedra'",
+      "Adicionada metáfora natural: 'planta que cresce'",
+      "Reforçada metáfora existente: 'diferença que importa'",
+      "Mantida metáfora funcional: 'relógio suíço'"
+    ],
+    "heat_enhancement": [
+      "Intensificadores: 'que importa', 'que cresce', 'que corta'",
+      "Consequências visuais: 'água que corta pedra'",
+      "Resultados tangíveis: 'você vê progresso'",
+      "Impacto emocional: 'diferença que importa'"
+    ]
+  },
+  "metrics_analysis": {
+    "human_tone_score": {
+      "initial": 0.91,
+      "final": 0.94,
+      "improvement": "+3%"
+    },
+    "question_density": {
+      "initial": 0.16,
+      "final": 0.19,
+      "improvement": "+19%"
+    },
+    "metaphor_density": {
+      "initial": 0.10,
+      "final": 0.13,
+      "improvement": "+30%"
+    },
+    "heat_score": {
+      "initial": 3.15,
+      "final": 3.35,
+      "improvement": "+6%"
+    }
+  },
+  "learned_patterns": {
+    "comparacao_consequencia": [
+      "Metáfora + resultado observável",
+      "Analogia + benefício tangível",
+      "Comparação + consequência prática",
+      "Imagem + efeito mensurável"
+    ],
+    "pergunta_resultado": [
+      "Pergunta direta + resposta com metáfora",
+      "Questionamento + consequência visual",
+      "Interrogação + benefício concreto",
+      "Inquirição + resultado prático"
+    ],
+    "heat_boost_techniques": [
+      "Intensificadores qualitativos",
+      "Consequências visuais",
+      "Resultados tangíveis",
+      "Impacto emocional direto"
+    ]
+  },
+  "recommendations": {
+    "maintain_patterns": [
+      "Comparação + consequência observável",
+      "Pergunta direta + resultado com metáfora",
+      "Intensificadores qualitativos",
+      "Consequências visuais e tangíveis"
+    ],
+    "avoid_patterns": [
+      "Metáforas sem consequência",
+      "Perguntas sem resposta",
+      "Intensificadores vazios",
+      "Resultados abstratos"
+    ],
+    "future_optimizations": [
+      "Aplicar padrões em outros arquivos",
+      "Testar com diferentes formatos",
+      "Monitorar scores em produção",
+      "Expandir base de metáforas funcionais"
+    ]
+  },
+  "validation": {
+    "goal_met": true,
+    "threshold_exceeded": 0.04,
+    "all_fewshots_optimized": true,
+    "no_regressions": true,
+    "ready_for_production": true,
+    "humanization_level": "excellent"
+  }
+}

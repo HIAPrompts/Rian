@@ -1,0 +1,276 @@
+# LEXICON — WHITELIST (formas canônicas)
+# Uso: case-insensitive; evite repetir conectores na mesma seção.
+# Regra: ≥1 termo whitelist por peça; 0 redlist.
+
+[conectores_assinatura]
+Sem rodeio:
+O ponto é:
+Na prática:
+Resumo:
+rapaziada
+olha só
+entendeu?
+faz o simples
+cara
+tá ligado?
+beleza?
+
+[funcoes_estruturais]
+tese:
+síntese:
+virada
+fecho
+CTA claro
+pergunta única
+rotina cria prova
+mostra o rastro
+corta barulho
+publica hoje
+melhora amanhã
+
+[conectores_emocionais]
+Ó,
+Tá ligado?
+Fechou?
+
+[moduladores_de_tom]
+sem enfeite
+sem atalhos
+sem romantizar
+sem espuma
+verdade sem espuma
+tom de conversa
+persuasao informal
+tom pessoal
+
+[marcas_temporais]
+hoje
+amanhã
+sete dias
+uma semana
+Às 6h17
+
+[metaforas_reais]
+rastro visível
+deixa rastro
+corta barulho
+paga a conta
+dói no bolso
+respira na câmera
+
+[verbos_de_acao]
+executa
+compara
+corta
+publica
+melhora
+mostra
+conduz
+chama pra ação
+
+[frases_de_fecho]
+Publica hoje, melhora amanhã
+Curto, limpo, publicável
+Fechou, executa
+
+[marcadores_de_contraste]
+—
+mas
+e
+porém
+
+[operadores_de_sintese]
+:
+O ponto é:
+Na prática:
+Resumo:
+
+[perguntas_gatilho]
+O que muda para o leitor depois deste parágrafo?
+Responda
+Entendeu?
+Tá ligado?
+
+[qualificadores_de_certeza]
+sem rodeio
+o ponto é
+na prática
+resumo
+
+[atenuadores]
+leve
+breve
+curto
+simples
+
+[intensificadores]
+dói
+corta
+paga a conta
+deixa rastro
+
+[marcadores_de_exemplo]
+Olha só:
+O ponto é:
+Na prática:
+como um mecânico
+detalhe verificável
+exemplo concreto
+caso real
+
+[marcadores_de_lista]
+Três checkpoints
+Uma ideia por cena
+Uma razão para ficar
+
+[voces_de_interlocucao]
+rapaziada
+olha só
+entendeu?
+tá ligado?
+
+[oralidade_maneirismos]
+Ó,
+Tá ligado?
+Fechou?
+Rapaziada
+
+[transicoes_discursivas]
+O ponto é:
+Na prática:
+Sem rodeio:
+Resumo:
+
+[frames_argumentativos]
+tese, evidência, síntese
+primeiro passo claro
+terceiro dia mantendo
+
+[temas_recorrentes]
+rotina
+prova
+rastro
+execução
+consistência
+
+[entidades_culturais]
+segunda-feira
+café amargo
+tela fria
+
+[numerais_assinatura]
+sete dias
+uma semana
+três bullets
+uma página
+
+[gestos_de_acao]
+publica hoje
+melhora amanhã
+corta barulho
+mostra o rastro
+
+[pontuacao_assinatura]
+: (dois-pontos para síntese)
+— (travessão para contraste)
+; (ponto e vírgula para enumeração)
+
+[marcadores_de_processo]
+primeiro passo
+terceiro dia
+compare antes e depois
+aceite cortar
+
+[padroes_humanos_gptzero]
+# Padrões extraídos de análises GPTZero que reduzem score de IA
+tom de conversa
+clareza factual
+análise informativa
+gramática simples
+frase direta + explicação leve
+exemplo concreto
+tom instrutivo, não didático
+
+[anti_ia_markers]
+# Marcas linguísticas que reduzem score de IA
+repetição de padrão SVOC previsível
+voz passiva com verbo auxiliar
+orações subordinadas excessivas
+metáforas genéricas
+ausência de pronomes de 2ª pessoa
+ausência de ação concreta
+
+[pronomes_humanos]
+você
+ele
+ela
+nós
+eles
+elas
+vocês
+
+[verbos_concretos]
+executa
+mostra
+corta
+publica
+melhora
+conduz
+chama
+decide
+compara
+mede
+
+[padroes_humanos_deteccao_ia]
+# Padrões que AUMENTAM probabilidade de "humano" em detecção de IA
+tom de conversa
+persuasao informal
+tom pessoal
+gramatica simples
+clareza factual
+frases diretas simples
+exemplos concretos
+
+[padroes_anti_ia_deteccao]
+# Padrões que REDUZEM probabilidade de "humano" (marcam como IA)
+sintaxe monotona
+escrita mecanica
+ritmo previsivel
+sintaxe previsivel
+vocabulario utilitario
+falta de complexidade
+orientacao rigida
+calor desapegado
+falta de criatividade
+
+[conectores_persuasivos]
+# Para persuasão informal
+olha so
+cara
+beleza
+ta ligado
+entendeu
+rapaziada
+o ponto e
+na pratica
+sem rodeio
+
+[exemplos_concretos]
+# Para clareza factual
+detalhe verificavel
+exemplo sensorial
+caso real
+numero especifico
+tempo exato
+lugar concreto
+pessoa real
+
+[aliases]  # → mapeia variações para as formas canônicas
+o ponto é -> O ponto é:
+sem rodeio -> Sem rodeio:
+na prática -> Na Prática:
+resumo -> Resumo:
+
+[policies]
+max_conectores_por_secao = 1
+rotacao_conectores = true     # alterne entre "Sem rodeio:", "Na prática:", etc.
