@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "mode": "compose",
+    "seed": 7,
+    "assets_dir": "/workspace/Rian/assets"
+  },
+  "assets_stats": {
+    "connectors": 2,
+    "sensory_pool": 2,
+    "second_person": 2
+  },
+  "style_gates": {
+    "min_words": 80,
+    "min_sentences": 5,
+    "min_paragraphs": 2,
+    "cadence_target": [
+      15,
+      25
+    ]
+  },
+  "tone_metadata": {},
+  "pre_score": {
+    "word_count": 101,
+    "sentence_count": 5,
+    "paragraph_count": 2,
+    "avg_sentence_len": 20.2,
+    "passes_hard_gate": true,
+    "passes_cadence_gate": true
+  },
+  "plan": [
+    {
+      "paragraph_index": 1,
+      "original": "Cheguei cedo ao escritório e encontrei a equipe espalhada em pequenos grupos, trocando ideias sobre o lançamento que nos espera. Observando de longe, percebi que cada pessoa estava testando hipóteses como quem monta um quebra-cabeça complicado, e anotei os pontos que pediam mais clareza. Enquanto ouvia, pensei no quanto precisamos alinhar expectativas antes da apresentação decisiva.",
+      "inject": [
+        {
+          "type": "connector",
+          "text": "Por fim,"
+        },
+        {
+          "type": "sensory",
+          "text": "A brisa fria arrepia a pele",
+          "source": "sensorial_corpus"
+        },
+        {
+          "type": "second_person",
+          "text": "Você percebe como a equipe se conecta nos intervalos",
+          "source": "personas_corpus"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 2,
+      "original": "Durante a tarde organizaremos um ensaio geral, ajustando o tom das falas e as demonstrações do produto para que nada pareça improvisado. Quando a reunião terminar, quero que todos saiam com tarefas específicas e uma noção concreta do impacto que buscamos alcançar com esse projeto.",
+      "inject": [
+        {
+          "type": "connector",
+          "text": "Além disso,"
+        },
+        {
+          "type": "sensory",
+          "text": "A brisa fria arrepia a pele",
+          "source": "sensorial_corpus"
+        },
+        {
+          "type": "second_person",
+          "text": "Você merece celebrar cada pequeno avanço",
+          "source": "personas_corpus"
+        }
+      ]
+    }
+  ],
+  "final_text": "Por fim, A brisa fria arrepia a pele Você percebe como a equipe se conecta nos intervalos Cheguei cedo ao escritório e encontrei a equipe espalhada em pequenos grupos, trocando ideias sobre o lançamento que nos espera. Observando de longe, percebi que cada pessoa estava testando hipóteses como quem monta um quebra-cabeça complicado, e anotei os pontos que pediam mais clareza. Enquanto ouvia, pensei no quanto precisamos alinhar expectativas antes da apresentação decisiva.\n\nAlém disso, A brisa fria arrepia a pele Você merece celebrar cada pequeno avanço Durante a tarde organizaremos um ensaio geral, ajustando o tom das falas e as demonstrações do produto para que nada pareça improvisado. Quando a reunião terminar, quero que todos saiam com tarefas específicas e uma noção concreta do impacto que buscamos alcançar com esse projeto.",
+  "post_score": {
+    "word_count": 132,
+    "sentence_count": 5,
+    "paragraph_count": 2,
+    "avg_sentence_len": 26.4,
+    "passes_hard_gate": true,
+    "passes_cadence_gate": false
+  },
+  "citations": [
+    {
+      "type": "sensory",
+      "quote": "A brisa fria arrepia a pele",
+      "source": "sensorial_corpus"
+    },
+    {
+      "type": "second_person",
+      "quote": "Você percebe como a equipe se conecta nos intervalos",
+      "source": "personas_corpus"
+    },
+    {
+      "type": "sensory",
+      "quote": "A brisa fria arrepia a pele",
+      "source": "sensorial_corpus"
+    },
+    {
+      "type": "second_person",
+      "quote": "Você merece celebrar cada pequeno avanço",
+      "source": "personas_corpus"
+    }
+  ]
+}
