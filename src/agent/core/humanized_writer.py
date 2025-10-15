@@ -1,8 +1,13 @@
 ﻿import yaml
 import json
 import random
+import logging
 from pathlib import Path
 from typing import Dict, Any, Optional, List
+
+# Configurar logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 class HumanizedWriter:
     """
@@ -23,13 +28,21 @@ class HumanizedWriter:
         Args:
             config_path (str): Path to the directory containing configuration files.
         """
+        logger.debug("Inicializando HumanizedWriter")
         self.config_path = Path(config_path)
+        logger.debug(f"Carregando configurações do diretório: {self.config_path}")
+        
+        logger.debug("Carregando regras de escrita...")
         self.writing_rules = self._load_yaml("rules/writing_rules.yaml")
+        logger.debug("Carregando template de prompt...")
         self.prompt_template = self._load_yaml("prompts/writing_prompt_complete.yaml")
+        logger.debug("Carregando exemplos de estilo...")
         self.few_shots = self._load_json("style_fewshots/cliente1.json")
+        logger.debug("Carregando regras rígidas...")
         self.hard_gates = self._load_json("rules/hard_gates.json")
         
         # Carregar perfil do Ryan Santos
+        logger.debug("Carregando perfil do Ryan Santos...")
         self.ryan_profile = self._load_yaml("../../src/agent/identity/ryan_santos_profile.yaml")
         
         # Sistema preventivo para evitar problemas de IA
@@ -41,36 +54,53 @@ class HumanizedWriter:
 
     def _load_yaml(self, file_path: str) -> Dict[str, Any]:
         """
-        Load a YAML configuration file.
+        Load a YAML configuration file with error handling.
 
         Args:
             file_path (str): Path to the YAML file.
 
         Returns:
             Dict[str, Any]: The loaded YAML content.
+
+        Raises:
+            FileNotFoundError: If the file does not exist.
+            ValueError: If the YAML is invalid.
         """
-        # Se for o perfil do Ryan, usar caminho absoluto
-        if "ryan_santos_profile.yaml" in file_path:
-            yaml_path = Path(__file__).parent.parent.parent / "agent" / "identity" / "ryan_santos_profile.yaml"
-        else:
-            yaml_path = self.config_path / file_path
-        
-        with open(yaml_path, 'r', encoding='utf-8') as file:
-            return yaml.safe_load(file)
+        try:
+            if "ryan_santos_profile.yaml" in file_path:
+                yaml_path = Path(__file__).parent.parent.parent / "agent" / "identity" / "ryan_santos_profile.yaml"
+            else:
+                yaml_path = self.config_path / file_path
+
+            with open(yaml_path, 'r', encoding='utf-8') as file:
+                return yaml.safe_load(file)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Arquivo YAML não encontrado: {yaml_path}")
+        except yaml.YAMLError as e:
+            raise ValueError(f"Erro ao carregar YAML: {e}")
 
     def _load_json(self, file_path: str) -> Dict[str, Any]:
         """
-        Load a JSON configuration file.
+        Load a JSON configuration file with error handling.
 
         Args:
             file_path (str): Path to the JSON file.
 
         Returns:
             Dict[str, Any]: The loaded JSON content.
+
+        Raises:
+            FileNotFoundError: If the file does not exist.
+            ValueError: If the JSON is invalid.
         """
-        json_path = self.config_path / file_path
-        with open(json_path, 'r', encoding='utf-8') as file:
-            return json.load(file)
+        try:
+            json_path = self.config_path / file_path
+            with open(json_path, 'r', encoding='utf-8') as file:
+                return json.load(file)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Arquivo JSON não encontrado: {json_path}")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Erro ao carregar JSON: {e}")
 
     def _cache_rules(self):
         """Cache frequently used rules for better performance."""
@@ -156,76 +186,119 @@ class HumanizedWriter:
 
     def _validar_elementos_autenticos(self, texto: str) -> dict:
         """
-        Validação de elementos autênticos incluídos
-        Implementação baseada nas sugestões do especialista.
+        Validação detalhada de elementos autênticos no texto.
+        Verifica a presença de histórias pessoais, dados específicos, analogias e reflexões.
+
+        Args:
+            texto (str): Texto a ser validado.
+
+        Returns:
+            dict: Dicionário com os elementos autênticos encontrados.
         """
+        texto_lower = texto.lower()
         elementos = {
-            "historia_pessoal": ("amigo meu" in texto.lower() or "história verídica" in texto.lower() or
-                                "eu fui ver os comentários" in texto.lower() or "número de pessoas que me seguem" in texto.lower()),
-            "dados_especificos": ("segundo dados da" in texto.lower() or "fgv" in texto.lower() or 
-                                "biden" in texto.lower() or "bilhões" in texto.lower() or 
-                                "estados unidos" in texto.lower() or "elon musk" in texto.lower() or
-                                "tesla" in texto.lower() or "subsídio" in texto.lower() or
-                                "10 milhões" in texto.lower() or "carros elétricos" in texto.lower() or
-                                "ano passado" in texto.lower()),
-            "analogias": ("é tipo igual" in texto.lower() or "autocracia" in texto.lower() or 
-                         "china" in texto.lower() or "alguém manda" in texto.lower() or
-                         "gangue" in texto.lower() or "trabalham pra eles" in texto.lower() or
-                         "hollywood" in texto.lower() or "filmes que parecem reais" in texto.lower() or
-                         "super fakes" in texto.lower()),
-            "reflexoes": ("impressionante" in texto.lower() or "número de pessoas que me seguem" in texto.lower() or
-                         "respeito maior" in texto.lower() or "acontecendo por aí" in texto.lower())
+            "historia_pessoal": bool(
+                any(frase in texto_lower for frase in [
+                    "amigo meu", "história verídica", "eu fui ver os comentários",
+                    "número de pessoas que me seguem", "aconteceu comigo"
+                ])
+            ),
+            "dados_especificos": bool(
+                any(frase in texto_lower for frase in [
+                    "segundo dados da", "fgv", "biden", "bilhões",
+                    "estados unidos", "elon musk", "tesla", "subsídio",
+                    "10 milhões", "carros elétricos", "ano passado"
+                ])
+            ),
+            "analogias": bool(
+                any(frase in texto_lower for frase in [
+                    "é tipo igual", "autocracia", "china", "alguém manda",
+                    "gangue", "trabalham pra eles", "hollywood", "filmes que parecem reais",
+                    "super fakes"
+                ])
+            ),
+            "reflexoes": bool(
+                any(frase in texto_lower for frase in [
+                    "impressionante", "respeito maior", "acontecendo por aí",
+                    "o que me choca", "o que me impressiona"
+                ])
+            ),
         }
-        print(f"[DEBUG] Validação de elementos autênticos: {elementos}")
+
+        # Adicionar validação de coerência temática (exemplo simples)
+        if "tecnologia" in texto_lower:
+            elementos["coerencia_tematica"] = bool(
+                any(palavra in texto_lower for palavra in ["ia", "inteligência artificial", "inova", "futuro"])
+            )
+        else:
+            elementos["coerencia_tematica"] = True  # Pular se não for sobre tecnologia
+
+        logger.debug(f"Validação de elementos autênticos: {elementos}")
         return elementos
 
     def _enriquecer_vocabulario(self, texto: str) -> str:
         """
-        Enriquecer vocabulário com gírias e expressões do Ryan Santos
-        Implementação baseada nas sugestões do especialista.
+        Enriquecer vocabulário com gírias e expressões do Ryan Santos,
+        substituindo palavras genéricas com base em probabilidade.
+
+        Args:
+            texto (str): Texto a ser enriquecido.
+
+        Returns:
+            str: Texto com vocabulário enriquecido.
         """
-        # Gírias e expressões autênticas do Ryan Santos (expandidas)
+        logger.debug(f"Iniciando enriquecimento de vocabulário para texto de {len(texto)} caracteres")
         replacements = {
-            "interessante": random.choice(["doido", "maluco", "absurdo", "impressionante", "louco", "daora", "massa", "top", "foda", "incrível", "sensacional"]),
-            "pessoas": random.choice(["galera", "pessoal", "rapaziada", "turma", "gente", "povo", "massa", "turminha", "galerinha"]),
-            "verdade": random.choice(["papo reto", "sem mentira", "na moral", "de verdade", "papo sério", "na real", "de fato", "realmente"]),
-            "muito": random.choice(["pra caramba", "demais", "pra cacete", "muito mesmo", "pra caralho", "pra porra", "pra dedéu", "pra valer"]),
-            "legal": random.choice(["daora", "massa", "top", "foda", "bacana", "maneiro", "show", "irado", "animal"]),
-            "problema": random.choice(["rolo", "pepino", "barriga", "encrenca", "pepino", "rolo", "barriga", "encrenca", "pepino"]),
-            "dinheiro": random.choice(["grana", "verba", "tutu", "dinheiro mesmo", "grana mesmo", "verba mesmo", "tutu mesmo", "dinheiro"]),
-            "trabalho": random.choice(["trampo", "labuta", "serviço", "trabalho mesmo", "trampo mesmo", "labuta mesmo", "serviço mesmo"]),
-            "casa": random.choice(["lar", "casa mesmo", "apê", "moradia", "lar mesmo", "casa", "apê mesmo", "moradia mesmo"]),
-            "carro": random.choice(["veículo", "carro mesmo", "automóvel", "máquina", "veículo mesmo", "carro", "automóvel mesmo", "máquina mesmo"]),
-            "comida": random.choice(["comida mesmo", "alimentação", "comida", "refeição", "comida mesmo", "alimentação mesmo", "refeição mesmo"]),
-            "tecnologia": random.choice(["tech", "tecnologia mesmo", "parada tecnológica", "inovação", "tech mesmo", "tecnologia", "parada tecnológica mesmo", "inovação mesmo"]),
-            "empresa": random.choice(["firma", "empresa mesmo", "negócio", "companhia", "firma mesmo", "empresa", "negócio mesmo", "companhia mesmo"]),
-            "governo": random.choice(["governo mesmo", "gestão pública", "administração", "poder público", "governo", "gestão pública mesmo", "administração mesmo", "poder público mesmo"]),
-            "mercado": random.choice(["mercado mesmo", "setor", "área", "segmento", "mercado", "setor mesmo", "área mesmo", "segmento mesmo"]),
-            "investimento": random.choice(["investimento mesmo", "aplicação", "colocação", "grana aplicada", "investimento", "aplicação mesmo", "colocação mesmo", "grana aplicada mesmo"]),
-            "resultado": random.choice(["resultado mesmo", "desfecho", "consequência", "final", "resultado", "desfecho mesmo", "consequência mesmo", "final mesmo"]),
-            "oportunidade": random.choice(["oportunidade mesmo", "chance", "possibilidade", "abertura", "oportunidade", "chance mesmo", "possibilidade mesmo", "abertura mesmo"]),
-            "desafio": random.choice(["desafio mesmo", "pepino", "rolo", "encrenca", "desafio", "pepino mesmo", "rolo mesmo", "encrenca mesmo"]),
-            "sucesso": random.choice(["sucesso mesmo", "vitória", "conquista", "realização", "sucesso", "vitória mesmo", "conquista mesmo", "realização mesmo"]),
-            "importante": random.choice(["importante mesmo", "fundamental", "essencial", "crucial", "importante", "fundamental mesmo", "essencial mesmo", "crucial mesmo"]),
-            "difícil": random.choice(["difícil mesmo", "complicado", "trampo", "pepino", "difícil", "complicado mesmo", "trampo mesmo", "pepino mesmo"]),
-            "fácil": random.choice(["fácil mesmo", "simples", "tranquilo", "de boa", "fácil", "simples mesmo", "tranquilo mesmo", "de boa mesmo"]),
-            "grande": random.choice(["grande mesmo", "enorme", "gigante", "monstro", "grande", "enorme mesmo", "gigante mesmo", "monstro mesmo"]),
-            "pequeno": random.choice(["pequeno mesmo", "pequeninho", "minúsculo", "tiquinho", "pequeno", "pequeninho mesmo", "minúsculo mesmo", "tiquinho mesmo"]),
-            "novo": random.choice(["novo mesmo", "novinho", "recente", "atual", "novo", "novinho mesmo", "recente mesmo", "atual mesmo"]),
-            "velho": random.choice(["velho mesmo", "antigo", "antiquado", "ultrapassado", "velho", "antigo mesmo", "antiquado mesmo", "ultrapassado mesmo"]),
-            "bom": random.choice(["bom mesmo", "bão", "daora", "massa", "top", "foda", "bom", "bão mesmo", "daora mesmo", "massa mesmo", "top mesmo", "foda mesmo"]),
-            "ruim": random.choice(["ruim mesmo", "péssimo", "horrível", "terrível", "ruim", "péssimo mesmo", "horrível mesmo", "terrível mesmo"]),
-            "certo": random.choice(["certo mesmo", "correto", "certo", "correto mesmo"]),
-            "errado": random.choice(["errado mesmo", "incorreto", "errado", "incorreto mesmo"]),
-            "sim": random.choice(["sim mesmo", "é", "é isso", "isso aí", "sim", "é mesmo", "é isso mesmo", "isso aí mesmo"]),
-            "não": random.choice(["não mesmo", "não é", "não é isso", "não é isso aí", "não", "não é mesmo", "não é isso mesmo", "não é isso aí mesmo"])
+            "interessante": ["doido", "maluco", "absurdo", "impressionante", "louco", "daora", "massa", "top", "foda", "incrível", "sensacional"],
+            "pessoas": ["galera", "pessoal", "rapaziada", "turma", "gente", "povo", "massa", "turminha", "galerinha"],
+            "verdade": ["papo reto", "sem mentira", "na moral", "de verdade", "papo sério", "na real", "de fato", "realmente"],
+            "muito": ["pra caramba", "demais", "pra cacete", "muito mesmo", "pra caralho", "pra porra", "pra dedéu", "pra valer"],
+            "legal": ["daora", "massa", "top", "foda", "bacana", "maneiro", "show", "irado", "animal"],
+            "problema": ["rolo", "pepino", "barriga", "encrenca"],
+            "dinheiro": ["grana", "verba", "tutu", "dinheiro mesmo", "grana mesmo"],
+            "trabalho": ["trampo", "labuta", "serviço", "trabalho mesmo"],
+            "casa": ["lar", "casa mesmo", "apê", "moradia"],
+            "carro": ["veículo", "carro mesmo", "automóvel", "máquina"],
+            "comida": ["comida mesmo", "alimentação", "comida", "refeição"],
+            "tecnologia": ["tech", "tecnologia mesmo", "parada tecnológica", "inovação"],
+            "empresa": ["firma", "empresa mesmo", "negócio", "companhia"],
+            "governo": ["governo mesmo", "gestão pública", "administração", "poder público"],
+            "mercado": ["mercado mesmo", "setor", "área", "segmento"],
+            "investimento": ["investimento mesmo", "aplicação", "colocação", "grana aplicada"],
+            "resultado": ["resultado mesmo", "desfecho", "consequência", "final"],
+            "oportunidade": ["oportunidade mesmo", "chance", "possibilidade", "abertura"],
+            "desafio": ["desafio mesmo", "pepino", "rolo", "encrenca"],
+            "sucesso": ["sucesso mesmo", "vitória", "conquista", "realização"],
+            "importante": ["importante mesmo", "fundamental", "essencial", "crucial"],
+            "difícil": ["difícil mesmo", "complicado", "trampo", "pepino"],
+            "fácil": ["fácil mesmo", "simples", "tranquilo", "de boa"],
+            "grande": ["grande mesmo", "enorme", "gigante", "monstro"],
+            "pequeno": ["pequeno mesmo", "pequeninho", "minúsculo", "tiquinho"],
+            "novo": ["novo mesmo", "novinho", "recente", "atual"],
+            "velho": ["velho mesmo", "antigo", "antiquado", "ultrapassado"],
+            "bom": ["bom mesmo", "bão", "daora", "massa", "top", "foda"],
+            "ruim": ["ruim mesmo", "péssimo", "horrível", "terrível"],
+            "certo": ["certo mesmo", "correto"],
+            "errado": ["errado mesmo", "incorreto"],
+            "sim": ["sim mesmo", "é", "é isso", "isso aí"],
+            "não": ["não mesmo", "não é", "não é isso", "não é isso aí"],
         }
-        
-        # Aplicar substituições
-        for generic, slang in replacements.items():
-            texto = texto.replace(generic, slang)
-        
-        return texto
+
+        # Dividir o texto em palavras e substituir com probabilidade de 30%
+        palavras = texto.split()
+        substituicoes = 0
+        for i, palavra in enumerate(palavras):
+            palavra_lower = palavra.lower()
+            for generic, slangs in replacements.items():
+                if palavra_lower == generic:
+                    if random.random() < 0.3:  # 30% de chance de substituir
+                        palavras[i] = random.choice(slangs)
+                        substituicoes += 1
+                        logger.debug(f"Substituindo '{palavra}' por '{palavras[i]}'")
+                        break  # Evita substituir a mesma palavra múltiplas vezes
+
+        logger.debug(f"Enriquecimento concluído: {substituicoes} substituições realizadas")
+        return ' '.join(palavras)
 
     def _adicionar_transicoes_naturais(self, texto: str) -> str:
         """
@@ -381,51 +454,43 @@ class HumanizedWriter:
 
     def _expandir_para_tamanho_desejado(self, texto: str, topic: str, tamanho_desejado: int = 3000) -> str:
         """
-        Expansão automática do texto para atingir tamanho desejado
-        Implementação baseada nas sugestões do especialista.
+        Expande o texto de forma contextualizada, adicionando conteúdo relevante ao tópico.
+
+        Args:
+            texto (str): Texto a ser expandido.
+            topic (str): Tópico do texto.
+            tamanho_desejado (int): Tamanho desejado em caracteres.
+
+        Returns:
+            str: Texto expandido.
         """
         tamanho_atual = len(texto)
-        
         if tamanho_atual >= tamanho_desejado:
             return texto
-        
-        print(f"[DEBUG] Expandindo texto de {tamanho_atual} para {tamanho_desejado} caracteres")
-        
-        # Conteúdo adicional autêntico do Ryan Santos
+
+        logger.debug(f"Expandindo texto de {tamanho_atual} para {tamanho_desejado} caracteres")
+
+        # Conteúdo adicional contextualizado
         conteudo_adicional = [
-            f"E aí, o que vocês acham? O {topic} não é só uma ferramenta, é uma revolução que está mudando tudo. Desde o jeito que a gente trabalha até como a gente se relaciona, o {topic} está presente em cada detalhe da nossa rotina.",
-            
-            f"Olha só, rapaziada, eu mesmo vejo isso na prática. Quando estou editando meus vídeos, o {topic} me ajuda a encontrar os melhores cortes. Quando estou respondendo comentários, ele me sugere respostas mais engajantes. E quando estou pesquisando sobre um tema, ele me direciona para as fontes mais relevantes.",
-            
-            f"Mas não é só isso. O {topic} está transformando áreas que a gente nem imagina. Na medicina, ele está ajudando a diagnosticar doenças mais cedo. Na educação, está personalizando o aprendizado para cada aluno. No transporte, está tornando os carros mais seguros e eficientes.",
-            
-            f"Entre nós, isso me deixa pensativo, sabe? O {topic} não é só uma tecnologia, é uma ferramenta que pode democratizar o acesso ao conhecimento e às oportunidades. Mas também traz desafios que a gente precisa enfrentar juntos.",
-            
-            f"E aí, o que vocês pensam sobre isso? Como o {topic} está impactando a vida de vocês? Se vocês já tiveram alguma experiência interessante, conta nos comentários! Valeu, rapaziada! Tamo junto!",
-            
-            f"Cara, é impressionante como as coisas mudaram. Antes a gente não tinha nem ideia do que era {topic}, e agora é uma parada que está em todo lugar. É impressionante mesmo como a tecnologia evolui rápido.",
-            
-            f"Olha só, rapaziada, eu fui ver os comentários, é impressionante o número de pessoas que me seguem e não sabem nem o que eu faço. Mas quando falo sobre {topic}, todo mundo se interessa. É impressionante como isso mexe com as pessoas.",
-            
-            f"Entre nós, sabe o que é legal? O {topic} não é só uma parada técnica, é uma ferramenta que pode mudar a vida das pessoas. É impressionante como uma tecnologia pode ter tanto impacto na sociedade.",
-            
-            f"E aí, o que vocês acham? O {topic} é uma parada que vai impactar a vida de todos nós. Se isso ressonou com vocês, compartilha com quem precisa ouvir. Valeu, rapaziada! Tamo junto!",
-            
-            f"Faz sentido para vocês? Deixa nos comentários!",
-            "Isso é só o começo, a revolução está apenas começando...",
-            "E aí, o que vocês pensam sobre isso? Comenta aí! Valeu, rapaziada! Tamo junto!"
+            f"E aí, o que vocês acham? O {topic} não é só uma ferramenta, é uma revolução que está mudando a forma como a gente vive e trabalha. É impressionante como isso impacta desde o dia a dia até grandes indústrias.",
+            f"Olha só, rapaziada, eu mesmo vejo isso na prática. Quando estou pesquisando sobre {topic}, fico impressionado com como as coisas estão evoluindo rápido. É uma parada que merece atenção.",
+            f"Mas não é só isso. O {topic} está transformando áreas que a gente nem imagina. Na saúde, na educação, nos transportes... é uma revolução silenciosa que está acontecendo agora.",
+            f"Entre nós, isso me deixa pensativo. O {topic} não é só uma tecnologia, é uma ferramenta que pode democratizar o acesso ao conhecimento. Mas também traz desafios que a gente precisa discutir.",
+            f"E aí, o que vocês pensam sobre isso? Como o {topic} está impactando a vida de vocês? Se vocês já tiveram alguma experiência, conta nos comentários! Valeu, galera!",
+            f"Cara, é impressionante como o {topic} está presente em tudo hoje em dia. Desde aplicativos até grandes sistemas, essa tecnologia está mudando o jogo.",
+            f"Sabe o que é louco? O {topic} não é só uma tendência, é uma realidade que veio para ficar. E a gente precisa estar preparado para aproveitar o melhor disso.",
+            f"E aí, o que vocês acham? O {topic} é uma parada que vai impactar todo mundo. Se isso faz sentido para vocês, compartilha com quem precisa saber!",
         ]
-        
-        # Adicionar conteúdo até atingir o tamanho desejado
+
         while len(texto) < tamanho_desejado:
-            conteudo_escolhido = random.choice(conteudo_adicional)
-            texto += f"\n\n{conteudo_escolhido}"
-            
+            paragrafo = random.choice(conteudo_adicional)
+            texto += f"\n\n{paragrafo}"
+
             # Evitar loop infinito
-            if len(texto) - tamanho_atual > tamanho_desejado * 2:
+            if len(texto) > tamanho_desejado * 1.5:
                 break
-        
-        print(f"[DEBUG] Texto expandido para {len(texto)} caracteres")
+
+        logger.debug(f"Texto expandido para {len(texto)} caracteres")
         return texto
 
     def _generate_modular_opening(self, topic: str) -> str:
