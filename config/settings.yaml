@@ -1,0 +1,14 @@
+# Configurações globais do agente
+mistral:
+  api_key: "sua_chave_mistral"  # Substitua pela sua chave real
+  model: "mistral-medium-3"     # Modelo padrão
+  temperature: 0.7              # Criatividade vs. previsibilidade
+
+langchain:
+  memory_window: 5              # Número de interações lembradas
+  max_retries: 3                # Tentativas em caso de falha
+
+rules:
+  max_sentence_length: 22       # Máximo de palavras por frase
+  min_human_warmth_score: 0.8   # Nota mínima para "calor humano"
+  banned_terms: ["compre já", "oferta imperdível", "exclusivo"]  # Hard Gates

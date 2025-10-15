@@ -1,0 +1,23 @@
+{
+    "banned_terms": ["compre já", "oferta imperdível", "exclusivo", "clique aqui", "obviamente", "certamente", "portanto", "consequentemente", "desta forma"],
+    "max_sentence_length": 22,
+    "required_elements": {
+      "second_person": true,
+      "sensory_detail": true,
+      "mini_anecdote": true,
+      "ryan_greeting": true,
+      "colloquial_expressions": true,
+      "personal_story": true
+    },
+    "ryan_specific_rules": {
+      "use_rapaziada": true,
+      "include_location": true,
+      "use_historia_veridica": true,
+      "include_humor": true,
+      "use_analogies": true
+    },
+    "style_consistency": {
+      "min_similarity_score": 0.85
+    }
+  }
+  

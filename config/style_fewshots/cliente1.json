@@ -1,0 +1,523 @@
+{
+    "exemplos": [
+      {
+        "texto": "Salve rapaziada, aqui é o Ryan Santos, direto de Barcelona e hoje eu quero falar sobre carros elétricos.",
+        "tom": "conversacional",
+        "publico": "jovens investidores",
+        "categoria": "abertura",
+        "notas": "Abertura característica do Ryan, uso de 'rapaziada', localização específica."
+      },
+      {
+        "texto": "Salve rapaziada, aqui é o Ryan Santos, direto de um dos meus apartamentos aí na Europa, Barcelona, mais precisamente a praia da Barceloneta.",
+        "tom": "conversacional",
+        "publico": "geral",
+        "categoria": "abertura",
+        "notas": "Localização específica, 'rapaziada', detalhes geográficos."
+      },
+      {
+        "texto": "Salve rapaziada, sou o Rayan Reage, o quadro já foi seu canal separado, só que a gente não conseguiu fazer muita coisa com aquele canal separado.",
+        "tom": "conversacional",
+        "publico": "seguidores",
+        "categoria": "abertura",
+        "notas": "Apresentação de quadro, 'rapaziada', explicação de mudança."
+      },
+      {
+        "texto": "Salve rapaziada, aqui é o Rayan Santos e hoje nós vamos reagir ao triste fim das esperanças de um time que eu torço.",
+        "tom": "conversacional",
+        "publico": "futebol",
+        "categoria": "abertura",
+        "notas": "Abertura para reação, 'rapaziada', contexto emocional."
+      },
+      {
+        "texto": "Salve rapaziada, aqui é o Ryan Santos, direto de um dos meus apartamentos aí na Europa, Barcelona, mais precisamente a praia da Barceloneta. E hoje eu quero trazer um ângulo diferente sobre as possíveis sanções financeiras que o Brasil poderá sofrer.",
+        "tom": "conversacional",
+        "publico": "política",
+        "categoria": "abertura",
+        "notas": "Localização específica, introdução de tópico sério, 'rapaziada'."
+      },
+      {
+        "texto": "Um amigo meu, história verídica, amigo meu, alugou um Tesla nos Estados Unidos. Ele falou: 'Devolvi o carro nunca mais'. Sabe o que é engraçado? Dos 30 carregadores, uns 15 estavam quebrados.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "storytelling",
+        "notas": "História pessoal, 'história verídica', linguagem coloquial, revelação inesperada."
+      },
+      {
+        "texto": "Aí você pega outra história verídica. Um jornalista que tem um Vonda Civic. Nos Estados Unidos o pessoal gosta muito de dirigir. Eles dirigem grandes distâncias.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "storytelling",
+        "notas": "Transição entre histórias, 'história verídica', contexto cultural."
+      },
+      {
+        "texto": "E você tem a história inteiros últimos anos. O que aconteceu com a Rússia, o que aconteceu com o Irã, assim como a Coreia do Norte, assim como o Brasil.",
+        "tom": "narrativo",
+        "publico": "política",
+        "categoria": "storytelling",
+        "notas": "História política, comparações internacionais, 'assim como'."
+      },
+      {
+        "texto": "E aí o próximo é vai ser tipo aliados. E aí eles vão começar a fazer assim como englobaram todo o cidadão russo, assim como fizeram com o Irã.",
+        "tom": "narrativo",
+        "publico": "política",
+        "categoria": "storytelling",
+        "notas": "Previsão política, 'tipo', 'assim como', linguagem coloquial."
+      },
+      {
+        "texto": "E sabe o que que eu escutei aí na rua? É que o pessoal do do estoque realmente ficar com medo de que a gente vai ter uma guerra civil aqui no Brasil.",
+        "tom": "narrativo",
+        "publico": "política",
+        "categoria": "storytelling",
+        "notas": "Revelação de conversa, 'sabe o que', linguagem coloquial, contexto político."
+      },
+      {
+        "texto": "Carro elétrico é tipo igual você casar com uma mulher feia. Você vai ter uma mulher feia, mas você vai precisar de uma outra. Então melhor não ter aquela feia.",
+        "tom": "humorístico",
+        "publico": "geral",
+        "categoria": "analogia",
+        "notas": "Analogia absurda, humor autodepreciativo, linguagem coloquial, metáfora cotidiana."
+      },
+      {
+        "texto": "É tipo igual você casar com uma mulher feia, você vai ter uma mulher feia, mas você vai precisar de uma outra. Então melhor não ter aquela feia.",
+        "tom": "humorístico",
+        "publico": "geral",
+        "categoria": "analogia",
+        "notas": "Repetição da analogia, humor autodepreciativo, linguagem coloquial."
+      },
+      {
+        "texto": "É tipo mais ou menos assim Blink Green. Só que eles, assim como olhava para cima, eles olham para baixo. E aí eles fazem tipo uma pessoa com diferencial.",
+        "tom": "explicativo",
+        "publico": "técnico",
+        "categoria": "analogia",
+        "notas": "Analogia técnica, 'tipo', 'assim como', linguagem explicativa."
+      },
+      {
+        "texto": "É tipo uma pessoa com diferencial. E aí eles fazem tipo uma pessoa com diferencial. E aí eles fazem tipo uma pessoa com diferencial.",
+        "tom": "explicativo",
+        "publico": "técnico",
+        "categoria": "analogia",
+        "notas": "Repetição para ênfase, 'tipo', linguagem técnica."
+      },
+      {
+        "texto": "É tipo igual você casar com uma mulher feia. Você vai ter uma mulher feia, mas você vai precisar de uma outra. Então melhor não ter aquela feia.",
+        "tom": "humorístico",
+        "publico": "geral",
+        "categoria": "analogia",
+        "notas": "Analogia repetida, humor autodepreciativo, linguagem coloquial."
+      },
+      {
+        "texto": "Eh, cara, a gente tem que tratar o carro, no fundo, é um passivo que só traz contas a pagar, só que vamos tratar como um ativo. Cara, é impressionante o quanto esse ativo deprecia.",
+        "tom": "educativo",
+        "publico": "investidores",
+        "categoria": "explicacao",
+        "notas": "Uso de 'eh, cara', explicação conceitual, linguagem financeira acessível."
+      },
+      {
+        "texto": "Olha só, rapaziada, a primeira coisa que você tem que lembrar é que carro elétrico vende bem na China. Vamos olhar esse, tá?",
+        "tom": "didatico",
+        "publico": "iniciantes",
+        "categoria": "explicacao",
+        "notas": "'Olha só', 'rapaziada', linguagem didática, 'vamos olhar'."
+      },
+      {
+        "texto": "A primeira coisa que você tem que lembrar é que carro elétrico vende bem na China. Vamos olhar esse, tá? Carro elétrico vende bem na China.",
+        "tom": "didatico",
+        "publico": "iniciantes",
+        "categoria": "explicacao",
+        "notas": "Repetição para ênfase, linguagem didática, 'vamos olhar'."
+      },
+      {
+        "texto": "Eh, cara, vamos lá. O que que tá acontecendo? A gente tem que entender o que que tá acontecendo. A gente tem que entender o que que tá acontecendo.",
+        "tom": "educativo",
+        "publico": "geral",
+        "categoria": "explicacao",
+        "notas": "Pergunta retórica, 'eh, cara', 'vamos lá', repetição para ênfase."
+      },
+      {
+        "texto": "Cara, é impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "educativo",
+        "publico": "investidores",
+        "categoria": "explicacao",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira, 'tipo'."
+      },
+      {
+        "texto": "Vamos olhar esse ano. Esse ano o mercado de carro elétrico no mundo cresceu 800.000 carros. Uau! 800.000 carros. 600.000 na China. 600.000 na China.",
+        "tom": "dados",
+        "publico": "geral",
+        "categoria": "estatisticas",
+        "notas": "Dados específicos, repetição para ênfase, 'vamos olhar', números concretos."
+      },
+      {
+        "texto": "10 milhões e meio de carro elétrico. 10 milhões e meio de carro 100% elétrico. Não tô falando de híbrido do planguinho, tô falando de 100% elétrico.",
+        "tom": "dados",
+        "publico": "geral",
+        "categoria": "estatisticas",
+        "notas": "Dados específicos, repetição para ênfase, esclarecimento de conceitos."
+      },
+      {
+        "texto": "10 milhões dos 10 milhões e meio, 7 milhões foi na China. Ou seja, a China domina completamente essa tecnologia. 2 milhões foi na Europa, 1 milhão foi Estados Unidos e Canadá e 500.000 em todo o resto do mundo.",
+        "tom": "dados",
+        "publico": "geral",
+        "categoria": "estatisticas",
+        "notas": "Dados comparativos, 'ou seja', distribuição geográfica, números específicos."
+      },
+      {
+        "texto": "A China é 30, lá vendeu sete, então lá dá 25%, a conta certa dá 25, que o mercado da China de veículos, se você tira comercial leve, é 27. Então lá carro elétrico é 25% do mercado.",
+        "tom": "dados",
+        "publico": "geral",
+        "categoria": "estatisticas",
+        "notas": "Cálculos percentuais, 'então', dados específicos, explicação de mercado."
+      },
+      {
+        "texto": "Na Europa é 13, nos Estados Unidos é 7, no resto do mundo é dois. Então, primeira coisa, carro elétrico vende bem na China.",
+        "tom": "dados",
+        "publico": "geral",
+        "categoria": "estatisticas",
+        "notas": "Comparação internacional, 'então', conclusão baseada em dados."
+      },
+      {
+        "texto": "E aí, o que você acha? Comenta aí! Se você já passou por algo parecido, conta nos comentários! Valeu, rapaziada! Tamo junto!",
+        "tom": "engajamento",
+        "publico": "geral",
+        "categoria": "fechamento",
+        "notas": "Pergunta direta, CTA para comentários, 'rapaziada', 'tamo junto'."
+      },
+      {
+        "texto": "Não se esqueça de dar o like e se inscrever nesse canal. Estamos junto e é isso. Dê o like aqui. Se inscrever aí.",
+        "tom": "cta",
+        "publico": "geral",
+        "categoria": "fechamento",
+        "notas": "CTA direto, 'like', 'inscrever', 'estamos junto', 'é isso'."
+      },
+      {
+        "texto": "Deixa nos comentários o que você pensa sobre isso. Se você curtiu, compartilha com aquele amigo que precisa ouvir isso.",
+        "tom": "engajamento",
+        "publico": "geral",
+        "categoria": "fechamento",
+        "notas": "Pergunta para comentários, CTA para compartilhamento, linguagem coloquial."
+      },
+      {
+        "texto": "E lembre-se: carro elétrico não é unanimidade, ele depende dos países. É só o começo. Tamo junto!",
+        "tom": "engajamento",
+        "publico": "geral",
+        "categoria": "fechamento",
+        "notas": "Lição resumida, 'é só o começo', 'tamo junto'."
+      },
+      {
+        "texto": "Se isso ressonou com você, compartilha com quem precisa ouvir. Valeu, rapaziada! Tamo junto!",
+        "tom": "engajamento",
+        "publico": "geral",
+        "categoria": "fechamento",
+        "notas": "CTA para compartilhamento, 'rapaziada', 'tamo junto'."
+      },
+      {
+        "texto": "Todo mundo diz que carro elétrico é o futuro, mas na verdade ele não é uma unanimidade, ele depende dos países. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "ironia",
+        "notas": "Contraria expectativas, 'todo mundo diz', dados comparativos, ironia sutil."
+      },
+      {
+        "texto": "Carro elétrico não é unanimidade, ele depende dos países. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "ironia",
+        "notas": "Contraria expectativas, dados comparativos, ironia sutil."
+      },
+      {
+        "texto": "Todo mundo diz que carro elétrico é o futuro, mas na verdade ele não é uma unanimidade. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "ironia",
+        "notas": "Contraria expectativas, 'todo mundo diz', dados comparativos."
+      },
+      {
+        "texto": "Na verdade, carro elétrico não é unanimidade, ele depende dos países. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "ironia",
+        "notas": "Contraria expectativas, 'na verdade', dados comparativos."
+      },
+      {
+        "texto": "Carro elétrico não é unanimidade, ele depende dos países. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "ironia",
+        "notas": "Contraria expectativas, dados comparativos, ironia sutil."
+      },
+      {
+        "texto": "Sabe o que é engraçado? Eu já tive carro, Ferrari, Porsche, já tive carro [__]. Até hoje eu tenho um Sportvinho, tem um C43 na Europa.",
+        "tom": "pessoal",
+        "publico": "geral",
+        "categoria": "experiencia",
+        "notas": "Revelação inesperada, 'já tive', experiência pessoal, gírias ('Sportvinho')."
+      },
+      {
+        "texto": "Eu já dirigi Tesla, aluguei Tesla nos Estados Unidos e para quem gosta de pisar é umaquinão. Eu já tive carro, carro esportivo, Ferrari, Porsche, já tive carro [__].",
+        "tom": "pessoal",
+        "publico": "geral",
+        "categoria": "experiencia",
+        "notas": "Experiência pessoal, 'já dirigi', 'já tive', linguagem coloquial."
+      },
+      {
+        "texto": "Até hoje eu tenho um Sportvinho, tem um C43 na Europa. O Tesla, o Tesla mais básico, ele é muito superior em termos de motor, em termos de pisar assim, como se fosse uma montanha russa da Disney.",
+        "tom": "pessoal",
+        "publico": "geral",
+        "categoria": "experiencia",
+        "notas": "Experiência pessoal, comparação criativa, linguagem coloquial."
+      },
+      {
+        "texto": "Eu já fui censurado. Esse canal aqui tá com quase 1 milhão. O outro canal, Ryan Santos, que quando tava prestes a bater 1 milhão, ele caiu no Brasil.",
+        "tom": "pessoal",
+        "publico": "geral",
+        "categoria": "experiencia",
+        "notas": "Experiência pessoal, 'já fui', contexto de censura, dados específicos."
+      },
+      {
+        "texto": "Fora as 44 contas que eu já tive, entendeu? Então eu acredito que aquele filme Ainda Estou aqui é meio que foi direcionado a oposição do Brasil.",
+        "tom": "pessoal",
+        "publico": "política",
+        "categoria": "experiencia",
+        "notas": "Experiência pessoal, 'já tive', contexto político, referência cultural."
+      },
+      {
+        "texto": "Que doideira, né, brother? Assim, olha que doideira, né, cara? O job tá pagando 200.000 dólares por ano. Cara, que doideira, meu irmão.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "reacao",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'brother', 'meu irmão', repetição."
+      },
+      {
+        "texto": "Cara, que doideira, né, brother? Assim, olha que doideira, né, cara? O job tá pagando 200.000 dólares por ano.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "reacao",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'brother', repetição."
+      },
+      {
+        "texto": "Que doideira, né, meu irmão? Trata-se de job que paga 200.000 dólares por ano. Cara, que doideira, meu irmão.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "reacao",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'meu irmão', repetição."
+      },
+      {
+        "texto": "Cara, que doideira, né, brother? Assim, olha que doideira, né, cara? O job tá pagando 200.000 dólares por ano. Cara, que doideira, meu irmão.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "reacao",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'brother', 'meu irmão', repetição."
+      },
+      {
+        "texto": "Que doideira, né, brother? Assim, olha que doideira, né, cara? O job tá pagando 200.000 dólares por ano. Cara, que doideira, meu irmão.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "reacao",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'brother', 'meu irmão', repetição."
+      },
+      {
+        "texto": "Eh, por que que eu digo isso, rapaziada? No ano de 2022, eu inventei de ir pra Rússia no verão, mês de julho, e eu fiquei lá de julho até outubro.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "historia_pessoal",
+        "notas": "Pergunta retórica, 'rapaziada', história pessoal, detalhes específicos (ano, mês)."
+      },
+      {
+        "texto": "Por quê? Porque, cara, meus amigos tavam lá, tinha um monte de mulher lá e eu tinha acabado de vender a empresa, tava nadando dinheiro.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "historia_pessoal",
+        "notas": "Pergunta retórica, 'cara', história pessoal, linguagem coloquial."
+      },
+      {
+        "texto": "E a primeira coisa que eu fiz foi abrir uma conta de um amigo meu. Esse amigo ele transforma. E assim, cara, era um amigo meu de muitíssima confiança.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "historia_pessoal",
+        "notas": "História pessoal, 'amigo meu', linguagem coloquial, 'assim'."
+      },
+      {
+        "texto": "E aí eu coloquei R$ 100.000 na conta de um amigo seu. Esse amigo ele compra o SDT na Rússia e ele me manda o dinheiro em rublos.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "historia_pessoal",
+        "notas": "História pessoal, dados específicos, 'amigo seu', linguagem coloquial."
+      },
+      {
+        "texto": "E aí eu fiquei com 700.000 rublos assim vivo em maleta. Tem um amigo meu que mora no Botafogo, com bolo de nota assim, meio que ele me ajudou.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "historia_pessoal",
+        "notas": "História pessoal, dados específicos, 'amigo meu', linguagem coloquial."
+      },
+      {
+        "texto": "Cara, é impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "impactante",
+        "publico": "investidores",
+        "categoria": "dados_financeiros",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira, 'tipo'."
+      },
+      {
+        "texto": "É impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "impactante",
+        "publico": "investidores",
+        "categoria": "dados_financeiros",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira."
+      },
+      {
+        "texto": "Cara, é impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "impactante",
+        "publico": "investidores",
+        "categoria": "dados_financeiros",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira."
+      },
+      {
+        "texto": "É impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "impactante",
+        "publico": "investidores",
+        "categoria": "dados_financeiros",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira."
+      },
+      {
+        "texto": "Cara, é impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "impactante",
+        "publico": "investidores",
+        "categoria": "dados_financeiros",
+        "notas": "Repetição para ênfase, dados específicos, linguagem financeira."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "transicao",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso', 'vamos lá'."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "transicao",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso'."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "transicao",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso'."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "transicao",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso'."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "transicao",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso'."
+      },
+      {
+        "texto": "Rapaziada, vocês, e eu eu eu escrevi assim, ó, eu nunca pensei que eu ia escrever isso, mas vocês brasileiros precisam aprender a usar criptomoedas.",
+        "tom": "confessional",
+        "publico": "brasileiros",
+        "categoria": "revelacao",
+        "notas": "Admite surpresa, 'nunca pensei', linguagem confessional, 'rapaziada'."
+      },
+      {
+        "texto": "Eu nunca pensei que eu ia escrever isso, mas vocês brasileiros precisam aprender a usar criptomoedas. Eh, por que que eu digo isso, rapaziada?",
+        "tom": "confessional",
+        "publico": "brasileiros",
+        "categoria": "revelacao",
+        "notas": "Admite surpresa, 'nunca pensei', linguagem confessional, 'rapaziada'."
+      },
+      {
+        "texto": "Rapaziada, vocês, e eu eu eu escrevi assim, ó, eu nunca pensei que eu ia escrever isso, mas vocês brasileiros precisam aprender a usar criptomoedas.",
+        "tom": "confessional",
+        "publico": "brasileiros",
+        "categoria": "revelacao",
+        "notas": "Admite surpresa, 'nunca pensei', linguagem confessional, 'rapaziada'."
+      },
+      {
+        "texto": "Eu nunca pensei que eu ia escrever isso, mas vocês brasileiros precisam aprender a usar criptomoedas. Eh, por que que eu digo isso, rapaziada?",
+        "tom": "confessional",
+        "publico": "brasileiros",
+        "categoria": "revelacao",
+        "notas": "Admite surpresa, 'nunca pensei', linguagem confessional, 'rapaziada'."
+      },
+      {
+        "texto": "Rapaziada, vocês, e eu eu eu escrevi assim, ó, eu nunca pensei que eu ia escrever isso, mas vocês brasileiros precisam aprender a usar criptomoedas.",
+        "tom": "confessional",
+        "publico": "brasileiros",
+        "categoria": "revelacao",
+        "notas": "Admite surpresa, 'nunca pensei', linguagem confessional, 'rapaziada'."
+      },
+      {
+        "texto": "E aí, o que você acha? Comenta aí! Se você já passou por algo parecido, conta nos comentários! Valeu, rapaziada! Tamo junto!",
+        "tom": "conversacional",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Pergunta direta, convite para interação, 'rapaziada', 'tamo junto'."
+      },
+      {
+        "texto": "Eh, por que que eu digo isso, rapaziada? No ano de 2022, eu inventei de ir pra Rússia no verão, mês de julho, e eu fiquei lá de julho até outubro.",
+        "tom": "narrativo",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Pergunta retórica, 'rapaziada', história pessoal, detalhes específicos."
+      },
+      {
+        "texto": "Sabe o que é engraçado? Eu já tive carro, Ferrari, Porsche, já tive carro [__]. Até hoje eu tenho um Sportvinho, tem um C43 na Europa.",
+        "tom": "pessoal",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Pergunta retórica, 'sabe o que', revelação pessoal, linguagem coloquial."
+      },
+      {
+        "texto": "Cara, é impressionante o quanto esse ativo deprecia. Absurdo. Absurdo. Tipo, você vai comprar um carro elétrico por 200.000, você não vai conseguir vender ele por 50 ano que vem.",
+        "tom": "educativo",
+        "publico": "investidores",
+        "categoria": "dialogo",
+        "notas": "Explicação direta, 'cara', dados específicos, linguagem financeira."
+      },
+      {
+        "texto": "Olha só, rapaziada, a primeira coisa que você tem que lembrar é que carro elétrico vende bem na China. Vamos olhar esse, tá?",
+        "tom": "didatico",
+        "publico": "iniciantes",
+        "categoria": "dialogo",
+        "notas": "'Olha só', 'rapaziada', linguagem didática, 'vamos olhar'."
+      },
+      {
+        "texto": "E aí, o que que tá acontecendo? A gente tem que entender o que que tá acontecendo. A gente tem que entender o que que tá acontecendo.",
+        "tom": "educativo",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Pergunta retórica, 'e aí', repetição para ênfase, linguagem coloquial."
+      },
+      {
+        "texto": "Que doideira, né, brother? Assim, olha que doideira, né, cara? O job tá pagando 200.000 dólares por ano. Cara, que doideira, meu irmão.",
+        "tom": "surpreso",
+        "publico": "jovens",
+        "categoria": "dialogo",
+        "notas": "Expressões de surpresa, 'doideira', 'né', 'brother', repetição."
+      },
+      {
+        "texto": "Todo mundo diz que carro elétrico é o futuro, mas na verdade ele não é uma unanimidade, ele depende dos países. Na China é 25% do mercado, na Europa é 13%, nos Estados Unidos é 7%.",
+        "tom": "contrastante",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Contraria expectativas, 'todo mundo diz', dados comparativos, ironia sutil."
+      },
+      {
+        "texto": "E é aqui que a coisa fica interessante... Mas não é só isso não... E o pior (ou melhor) é que... Eh, cara, vamos lá...",
+        "tom": "suspense",
+        "publico": "geral",
+        "categoria": "dialogo",
+        "notas": "Cria suspense, 'a coisa fica interessante', 'não é só isso', 'vamos lá'."
+      }
+    ]
+  }
+  

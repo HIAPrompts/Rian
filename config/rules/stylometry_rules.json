@@ -1,0 +1,83 @@
+{
+  "stylometry_metrics": {
+    "uniqueness": {
+      "min_score": 0.85,
+      "target_score": 0.90,
+      "description": "Mede quão único é o estilo de escrita do Ryan Santos"
+    },
+    "engagement": {
+      "min_score": 0.80,
+      "target_score": 0.85,
+      "description": "Mede o nível de engajamento e conexão com o público"
+    },
+    "authenticity": {
+      "min_score": 0.90,
+      "target_score": 0.95,
+      "description": "Mede a autenticidade do estilo do Ryan Santos"
+    },
+    "readability": {
+      "min_score": 0.75,
+      "target_score": 0.80,
+      "description": "Mede a legibilidade e clareza do texto"
+    }
+  },
+  "ryan_specific_patterns": {
+    "required_phrases": [
+      "rapaziada",
+      "eh, cara",
+      "né",
+      "tá ligado",
+      "brother",
+      "meu irmão",
+      "história verídica",
+      "sabe o que",
+      "vamos olhar",
+      "olha só"
+    ],
+    "forbidden_phrases": [
+      "obviamente",
+      "certamente",
+      "portanto",
+      "consequentemente",
+      "desta forma",
+      "compre já",
+      "oferta imperdível",
+      "exclusivo"
+    ],
+    "sentence_patterns": {
+      "max_length": 22,
+      "avg_length": 12,
+      "min_length": 5,
+      "repetition_allowed": true,
+      "questions_required": true
+    },
+    "paragraph_patterns": {
+      "max_sentences": 3,
+      "min_sentences": 1,
+      "ideal_sentences": 2
+    }
+  },
+  "content_requirements": {
+    "opening_required": true,
+    "location_mention": true,
+    "personal_story": true,
+    "data_or_statistics": true,
+    "analogy_or_metaphor": true,
+    "engagement_question": true,
+    "closing_cta": true
+  },
+  "tone_requirements": {
+    "conversational": true,
+    "direct": true,
+    "authentic": true,
+    "humorous": true,
+    "controversial": true,
+    "educational": true
+  },
+  "cultural_adaptation": {
+    "brazilian_slang": true,
+    "local_references": true,
+    "cultural_context": true,
+    "informal_language": true
+  }
+}

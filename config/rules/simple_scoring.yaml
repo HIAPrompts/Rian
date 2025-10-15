@@ -1,0 +1,56 @@
+# Sistema de Pontuação Simplificado
+ai_penalties:
+  artificial_simplicity:
+    description: "Estrutura de frase simples e coloquial"
+    penalty_per_occurrence: -5
+    detection_patterns:
+      - "E aí"
+      - "Então"
+      - "Mas"
+      - "Porque"
+    max_penalty: -25
+    mitigation_strategies:
+      - "Use variações de abertura"
+      - "Varie estruturas de frase"
+
+  redundant_ideas:
+    description: "Repetição perceptível de frases e ideias"
+    penalty_per_occurrence: -8
+    detection_patterns:
+      - "eleições 2026"
+    max_penalty: -40
+    mitigation_strategies:
+      - "Use sinônimos"
+      - "Desenvolva ideias progressivamente"
+
+human_bonuses:
+  personal_tone:
+    description: "Tom pessoal e informal"
+    bonus_per_occurrence: 10
+    detection_patterns:
+      - "rapaziada"
+      - "cara"
+      - "né"
+      - "brother"
+    max_bonus: 50
+    enhancement_strategies:
+      - "Use mais gírias características"
+      - "Inclua opiniões pessoais"
+
+  humorous_narrative:
+    description: "Humor e autodepreciação"
+    bonus_per_occurrence: 12
+    detection_patterns:
+      - "história verídica"
+      - "sabe o que"
+      - "absurdo"
+    max_bonus: 60
+    enhancement_strategies:
+      - "Inclua mais humor"
+      - "Use autodepreciação"
+
+scoring_system:
+  total_possible_score: 100
+  ai_threshold: 30
+  human_threshold: 70
+  target_range: [40, 65]

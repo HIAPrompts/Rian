@@ -1,0 +1,272 @@
+# ========================================
+# SISTEMA DE PONTUAÇÃO PARA HUMANIZAÇÃO
+# Baseado em análise de detecção de IA vs. texto humano
+# ========================================
+
+# ========================================
+# PONTUAÇÕES NEGATIVAS (CARACTERÍSTICAS DE IA)
+# ========================================
+ai_penalties:
+  artificial_simplicity:
+    description: "Estrutura de frase simples e coloquial, geralmente começando com conjunções"
+    penalty_per_occurrence: -5
+    detection_patterns:
+      - "E aí"
+      - "Então"
+      - "Mas"
+      - "Porque"
+      - "Quando"
+      - "Se"
+    max_penalty: -25
+    mitigation_strategies:
+      - "Use variações de abertura de frase"
+      - "Inclua estruturas complexas ocasionalmente"
+      - "Varie o posicionamento de conjunções"
+
+  redundant_ideas:
+    description: "Repetição perceptível de frases e ideias, tornando o texto redundante"
+    penalty_per_occurrence: -8
+    detection_patterns:
+      - "repetição de conceitos em 3+ frases consecutivas"
+      - "mesma palavra-chave em 4+ frases"
+      - "ideias similares sem desenvolvimento"
+    max_penalty: -40
+    mitigation_strategies:
+      - "Desenvolva ideias progressivamente"
+      - "Use sinônimos e variações"
+      - "Adicione novos ângulos e perspectivas"
+
+  monotonous_syntax:
+    description: "Variedade limitada e previsível de sintaxe resulta em estruturas repetitivas"
+    penalty_per_occurrence: -6
+    detection_patterns:
+      - "mesma estrutura de frase 3+ vezes seguidas"
+      - "padrão sujeito-verbo-objeto repetitivo"
+      - "ausência de variação sintática"
+    max_penalty: -30
+    mitigation_strategies:
+      - "Varie comprimento de frases (curtas, médias, longas)"
+      - "Use diferentes tipos de orações (simples, compostas, complexas)"
+      - "Inclua perguntas, exclamações, interjeições"
+
+  predictable_syntax:
+    description: "Sintaxe limitada, favorecendo frases declarativas e estruturas repetitivas"
+    penalty_per_occurrence: -4
+    detection_patterns:
+      - "90%+ frases declarativas"
+      - "ausência de perguntas retóricas"
+      - "padrão previsível de pontuação"
+    max_penalty: -20
+    mitigation_strategies:
+      - "Inclua perguntas retóricas"
+      - "Use exclamações e interjeições"
+      - "Varie tipos de pontuação"
+
+  repetitive_language:
+    description: "Escolha repetitiva de palavras com adjetivos e frases simples, sem variação"
+    penalty_per_occurrence: -3
+    detection_patterns:
+      - "mesmo adjetivo 3+ vezes"
+      - "vocabulário limitado"
+      - "ausência de sinônimos"
+    max_penalty: -15
+    mitigation_strategies:
+      - "Use sinônimos e variações"
+      - "Expanda vocabulário"
+      - "Inclua termos específicos e técnicos"
+
+  speculative_focus:
+    description: "Elementos especulativos e hipotéticos, foco em resultados potenciais"
+    penalty_per_occurrence: -7
+    detection_patterns:
+      - "pode"
+      - "poderá"
+      - "possivelmente"
+      - "talvez"
+      - "futuro"
+      - "potencial"
+      - "implicações"
+      - "especulativo"
+      - "hipotético"
+    max_penalty: -35
+    mitigation_strategies:
+      - "Use fatos concretos e dados específicos"
+      - "Inclua experiências pessoais reais"
+      - "Foque no presente e passado"
+
+  promotional_tone:
+    description: "Tom promocional para criar entusiasmo e urgência"
+    penalty_per_occurrence: -6
+    detection_patterns:
+      - "imperdível"
+      - "exclusivo"
+      - "limitado"
+      - "agora"
+      - "urgente"
+      - "imediatamente"
+      - "garantido"
+      - "comprovado"
+      - "100%"
+    max_penalty: -30
+    mitigation_strategies:
+      - "Use tom conversacional e natural"
+      - "Evite superlativos excessivos"
+      - "Seja honesto sobre limitações"
+
+  engagement_features:
+    description: "Chamadas para ação e hiperlinks para aumentar engajamento"
+    penalty_per_occurrence: -4
+    detection_patterns:
+      - "clique aqui"
+      - "saiba mais"
+      - "leia mais"
+      - "compartilhe"
+      - "curta"
+      - "inscreva-se"
+      - "links excessivos"
+    max_penalty: -20
+    mitigation_strategies:
+      - "Use engajamento natural e conversacional"
+      - "Evite CTAs óbvios"
+      - "Inclua perguntas genuínas"
+
+  predictable_rhythm:
+    description: "Variedade de sintaxe mínima, ritmo consistente e previsível"
+    penalty_per_occurrence: -5
+    detection_patterns:
+      - "ritmo uniforme sem variação"
+      - "ausência de pausas naturais"
+      - "padrão rítmico repetitivo"
+    max_penalty: -25
+    mitigation_strategies:
+      - "Varie velocidade e ritmo"
+      - "Inclua pausas e respirações"
+      - "Use diferentes cadências"
+
+# ========================================
+# PONTUAÇÕES POSITIVAS (CARACTERÍSTICAS HUMANAS)
+# ========================================
+human_bonuses:
+  personal_tone:
+    description: "Tom pessoal, incorporando opiniões e reflexões com linguagem informal"
+    bonus_per_occurrence: +10
+    detection_patterns:
+      - "eu acho"
+      - "na minha opinião"
+      - "pessoalmente"
+      - "minha experiência"
+      - "eu já"
+      - "comigo"
+      - "gírias e expressões pessoais"
+    max_bonus: +50
+    enhancement_strategies:
+      - "Inclua opiniões pessoais genuínas"
+      - "Use linguagem informal e coloquial"
+      - "Compartilhe experiências pessoais"
+
+  creative_grammar:
+    description: "Estruturas gramaticais manipuladas criativamente para refletir estado interno"
+    bonus_per_occurrence: +8
+    detection_patterns:
+      - "quebras gramaticais intencionais"
+      - "estruturas não convencionais"
+      - "reflexo de estado emocional"
+    max_bonus: +40
+    enhancement_strategies:
+      - "Use estruturas gramaticais criativas"
+      - "Reflita estado emocional na gramática"
+      - "Quebre regras intencionalmente"
+
+  humorous_narrative:
+    description: "Humor e autodepreciação para criar narrativa relacionável"
+    bonus_per_occurrence: +12
+    detection_patterns:
+      - "piadas e humor"
+      - "autodepreciação"
+      - "ironia e sarcasmo"
+      - "analogias engraçadas"
+    max_bonus: +60
+    enhancement_strategies:
+      - "Inclua humor genuíno"
+      - "Use autodepreciação moderada"
+      - "Crie analogias engraçadas"
+
+  informal_persuasion:
+    description: "Tom informal e persuasivo, usando convicção pessoal e exemplos relacionáveis"
+    bonus_per_occurrence: +9
+    detection_patterns:
+      - "convicção pessoal clara"
+      - "exemplos do dia a dia"
+      - "persuasão natural"
+    max_bonus: +45
+    enhancement_strategies:
+      - "Expresse convicções pessoais"
+      - "Use exemplos cotidianos"
+      - "Persuada de forma natural"
+
+  distinct_personal_voice:
+    description: "Voz distinta, pessoal e envolvente, refletindo perspectivas individuais"
+    bonus_per_occurrence: +15
+    detection_patterns:
+      - "voz única e reconhecível"
+      - "perspectivas individuais"
+      - "emoções genuínas"
+    max_bonus: +75
+    enhancement_strategies:
+      - "Desenvolva voz única e consistente"
+      - "Inclua perspectivas pessoais"
+      - "Expresse emoções genuínas"
+
+  conversational_tone:
+    description: "Tom de conversa, indicando comunicação direta"
+    bonus_per_occurrence: +7
+    detection_patterns:
+      - "linguagem conversacional"
+      - "comunicação direta"
+      - "interação natural"
+    max_bonus: +35
+    enhancement_strategies:
+      - "Use linguagem conversacional"
+      - "Comunique diretamente"
+      - "Interaja naturalmente"
+
+# ========================================
+# SISTEMA DE PONTUAÇÃO GERAL
+# ========================================
+scoring_system:
+  total_possible_score: 100
+  ai_threshold: 30  # Abaixo disso = muito robótico
+  human_threshold: 70  # Acima disso = muito humano
+  target_range: [40, 65]  # Faixa ideal para humanização
+
+  calculation_method:
+    - "Somar todos os bônus humanos"
+    - "Subtrair todas as penalidades de IA"
+    - "Aplicar multiplicadores por categoria"
+    - "Normalizar para escala 0-100"
+
+  category_weights:
+    personal_tone: 1.2
+    creative_grammar: 1.1
+    humorous_narrative: 1.3
+    informal_persuasion: 1.0
+    distinct_voice: 1.4
+    conversational_tone: 1.1
+
+# ========================================
+# REGRAS DE APLICAÇÃO
+# ========================================
+application_rules:
+  min_sentence_variety: 3  # Mínimo de tipos de frase diferentes
+  max_repetition_ratio: 0.3  # Máximo 30% de repetição
+  required_human_elements: 2  # Mínimo de 2 elementos humanos obrigatórios
+  max_ai_penalties: 5  # Máximo de 5 penalidades de IA
+
+  mandatory_human_traits:
+    - "personal_tone"
+    - "conversational_tone"
+  
+  forbidden_ai_traits:
+    - "promotional_tone"
+    - "speculative_focus"
+    - "redundant_ideas"

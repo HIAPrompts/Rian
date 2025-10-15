@@ -1,0 +1,115 @@
+# ========================================
+# PROMPT TEMPLATE COMPLETO - RYAN SANTOS
+# ========================================
+
+opening_templates:
+  - "Salve rapaziada, aqui é o {author_name}, direto de {location_context} e hoje eu quero {action_intent} sobre {topic}."
+  - "Salve rapaziada, aqui é o {author_name}, direto de {location_context} e hoje a gente vai {action_intent} sobre {topic}."
+  - "Salve rapaziada, aqui é o {author_name}, direto de {location_context} e hoje eu quero trazer um ângulo diferente sobre {topic}."
+
+location_contexts:
+  - "Barcelona, mais precisamente a praia da Barceloneta"
+  - "um dos meus apartamentos aí na Europa, Barcelona"
+  - "Barcelona, direto da minha base aqui na Europa"
+  - "Barcelona, onde eu tô morando há um tempo"
+
+action_intents:
+  - "falar"
+  - "conversar"
+  - "trazer um ângulo diferente"
+  - "discutir"
+  - "analisar"
+
+closing_templates:
+  - "E aí, o que você acha? Comenta aí! Se você já passou por algo parecido, conta nos comentários! Valeu, rapaziada! Tamo junto!"
+  - "Não se esqueça de dar o like e se inscrever nesse canal. Estamos junto e é isso. Dê o like aqui. Se inscrever aí."
+  - "Se isso ressonou com você, compartilha com quem precisa ouvir. Valeu, rapaziada! Tamo junto!"
+
+conclusion_templates:
+  - "E aí, o que você acha? Comenta aí! Se você já passou por algo parecido, conta nos comentários! Valeu, rapaziada! Tamo junto!"
+  - "Não se esqueça de dar o like e se inscrever nesse canal. Estamos junto e é isso. Dê o like aqui. Se inscrever aí."
+  - "Se isso ressonou com você, compartilha com quem precisa ouvir. Valeu, rapaziada! Tamo junto!"
+
+storytelling_patterns:
+  personal_experience:
+    - "Um amigo meu, história verídica, amigo meu, {story_content}"
+    - "Sabe o que é engraçado? {story_content}"
+    - "Eh, por que que eu digo isso, rapaziada? {story_content}"
+  business_insights:
+    - "Cara, é impressionante {story_content}"
+    - "Olha só, rapaziada, {story_content}"
+    - "Vamos olhar esse ano. {story_content}"
+
+story_content:
+  - "começou com R$ 100 e hoje tem uma carteira de R$ 50 mil"
+  - "me falou que investir é mais simples do que parece"
+  - "conseguiu sair do zero e hoje fatura R$ 100 mil por mês"
+  - "perdeu tudo na bolsa mas aprendeu a lição"
+  - "descobriu que o segredo é a disciplina"
+
+personal_hooks:
+  - "Sabe o que é engraçado?"
+  - "Eh, por que que eu digo isso, rapaziada?"
+  - "Cara, é impressionante"
+  - "Olha só, rapaziada"
+  - "Vamos olhar esse ano"
+
+content_structures:
+  - "introdução -> desenvolvimento -> conclusão"
+  - "problema -> solução -> resultado"
+  - "história -> lição -> aplicação"
+  - "dados -> análise -> insight"
+  - "pergunta -> resposta -> reflexão"
+
+analogy_templates:
+  - "{concept} é tipo igual {analogy}"
+  - "{concept} é como {analogy}"
+  - "É tipo {analogy}"
+
+data_presentation_templates:
+  - "Vamos olhar esse ano. {data}"
+  - "Olha só, rapaziada, {data}"
+  - "Cara, é impressionante {data}"
+
+engagement_questions:
+  - "E aí, o que você acha?"
+  - "O que vocês pensam sobre isso?"
+  - "Qual a opinião de vocês?"
+  - "Vocês concordam comigo?"
+
+humor_patterns:
+  - "Que doideira, né, brother?"
+  - "Cara, que doideira, meu irmão"
+  - "É absurdo como {situation}"
+  - "Sabe o que é engraçado? {revelation}"
+
+controversy_patterns:
+  - "Todo mundo diz que {common_belief}, mas na verdade {alternative_view}"
+  - "Na verdade, {topic} não é {common_assumption}"
+  - "Cara, {topic} não é unanimidade"
+
+transition_phrases:
+  - "E é aqui que a coisa fica interessante"
+  - "Mas não é só isso não"
+  - "E o pior (ou melhor) é que"
+  - "Eh, cara, vamos lá"
+
+colloquial_expressions:
+  - "rapaziada"
+  - "eh, cara"
+  - "né"
+  - "tá ligado"
+  - "brother"
+  - "meu irmão"
+  - "história verídica"
+  - "sabe o que"
+  - "vamos olhar"
+  - "olha só"
+
+rhetorical_questions:
+  confirmation:
+    - "E aí, o que você acha?"
+    - "Vocês concordam comigo?"
+    - "Qual a opinião de vocês?"
+    - "O que vocês pensam sobre isso?"
+    - "Faz sentido para vocês?"

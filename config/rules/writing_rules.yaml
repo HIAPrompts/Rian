@@ -1,0 +1,567 @@
+﻿# ========================================
+# REGRAS DE HUMANIZAÇÃO AVANÇADAS
+# Baseado em análise de 33 textos reais + estudos científicos
+# ========================================
+
+# ========================================
+# ESTILO E PERSONALIDADE
+# ========================================
+writing_style: 'humanized'
+tone: 'conversational'  # Escala: formal, neutral, conversational, casual
+voice: 'authentic'  # Característica única do autor
+personality: 'friendly_expert'  # Combinação de acessível + especializado
+emotional_intelligence: 'high'  # Capacidade de conectar emocionalmente
+
+# ========================================
+# ESTRUTURA LINGUÍSTICA
+# ========================================
+linguistic_structure:
+  # Comprimento de frases (baseado em Flesch-Kincaid + análise real)
+  sentence_length:
+    max_words: 18  # Baseado em estudos de legibilidade (Flesch-Kincaid)
+    avg_words: 12  # Ideal para retenção de atenção
+    min_words: 5   # Evita fragmentação excessiva
+  
+  # Comprimento de parágrafos (otimizado para leitura digital)
+  paragraph_length:
+    max_sentences: 3  # Evita "paredes de texto"
+    min_sentences: 1  # Permite ênfase
+    ideal_sentences: 2  # Equilíbrio ideal
+  
+  # Padrões de pontuação (baseado em análise dos 33 textos)
+  punctuation:
+    use_ellipsis: true  # "..." para pausas naturais
+    use_dashes: true    # "—" para interrupções
+    use_parentheses: true  # ( ) para comentários laterais
+    exclamation_frequency: 'sparingly'  # Máximo 1 por 100 palavras
+  
+  # Padrões de sentença (extraídos dos textos reais)
+  sentence_patterns:
+    question_start: 0.15  # 15% das frases começam com pergunta
+    exclamation_start: 0.05  # 5% com exclamação
+    transition_start: 0.25  # 25% com conectores ("Então", "E aí")
+    story_start: 0.10  # 10% com elementos narrativos
+
+# ========================================
+# FLUXO E RITMO DE TEXTO
+# ========================================
+text_flow:
+  use_transitions: true
+  vary_sentence_start: true
+  create_rhythm: true
+  breathing_room: true  # Espaços para "respirar"
+  
+  # Transições mais usadas (frequência real dos 33 textos)
+  transition_words:
+    high_frequency:  # >100 ocorrências
+      - "Então"      # 410 vezes
+      - "E aí"       # 166 vezes
+      - "Tipo"       # 127 vezes
+      - "OK?"        # 127 vezes
+    medium_frequency:  # 50-100 ocorrências
+      - "Só que"     # 81 vezes
+      - "Olha só"    # 34 vezes
+    low_frequency:   # <50 ocorrências
+      - "Basicamente" # 12 vezes
+
+# ========================================
+# LINGUAGEM HUMANA E COLOQUIAL
+# ========================================
+human_language:
+  # Pronomes e perspectiva (baseado em análise real)
+  use_second_person: true  # "você" - cria conexão direta
+  use_first_person_plural: true  # "nós", "vamos" - inclusão
+  use_first_person_singular: true  # "eu" - autenticidade
+  
+  # Voz e estilo
+  use_active_voice: true  # "Eu fiz" vs "Foi feito por mim"
+  avoid_passive_voice: true
+  use_contractions: true  # "você está" -> "você tá"
+  
+  # Detalhes sensoriais e emocionais
+  include_sensory_details: true  # "tomando café", "cheiro de..."
+  add_emotional_hooks: true  # Conexão emocional
+  use_metaphors: true  # "é a mesma coisa que..."
+  include_mini_anecdotes: true  # Histórias pessoais
+  
+  # Linguagem natural (baseado nos 33 textos)
+  avoid_jargon: true
+  use_colloquialisms: true
+  include_rhetorical_questions: true
+  use_exclamations_sparingly: true
+  
+  # Expressões coloquiais mais usadas (frequência real)
+  colloquial_expressions:
+    ultra_high:  # >15 por texto
+      - "cara"  # 682 vezes total
+    high:  # 3-10 por texto
+      - "entendeu"  # 107 vezes
+      - "beleza"    # 45 vezes
+      - "rapaziada" # 132 vezes
+    medium:  # 1-3 por texto
+      - "putz"
+      - "sei lá"
+      - "tipo"
+
+# ========================================
+# ADAPTAÇÃO DE TOM POR CONTEXTO
+# ========================================
+tone_adaptation:
+  # Escala de formalidade (1=casual, 10=formal)
+  formality_level: 7  # Baseado em análise dos textos (conversacional mas informativo)
+  
+  # Contextos específicos
+  educational_content:
+    formality: 6  # Mais didático
+    use_examples: true
+    explain_concepts: true
+  
+  personal_stories:
+    formality: 4  # Mais íntimo
+    use_emotions: true
+    include_details: true
+  
+  controversial_topics:
+    formality: 8  # Mais cuidadoso
+    use_hedging: true  # "talvez", "possivelmente"
+    acknowledge_opposition: true
+
+# ========================================
+# ENGAGEMENT E INTERAÇÃO
+# ========================================
+engagement_rules:
+  # Perguntas retóricas (baseado na análise)
+  rhetorical_questions:
+    frequency: 0.15  # 15% das frases
+    types:
+      - "Beleza?"  # Confirmação
+      - "Entendeu?"  # Compreensão
+      - "Por quê?"  # Reflexão
+      - "Como assim, cara?"  # Esclarecimento
+  
+  # Calls to action
+  call_to_action:
+    video_engagement:
+      - "Antes da gente pular pro vídeo, eu peço encarecidamente para você dar o like e se inscrever nesse canal."
+      - "Deu o like, se inscreveu aí. Beleza? Então vamos para o vídeo."
+    comment_engagement:
+      - "E aí, {question}? Deixa aí nos comentários."
+      - "E eu faço questão de ler os comentários porque o público aqui é extremamente qualificado."
+  
+  # Storytelling para engajamento
+  storytelling_hooks:
+    - "Eu quando tinha {age} anos, eu {action}."
+    - "E nessa época {time_context} era tipo, {description}."
+    - "Esses dias, cara, eu {action}."
+    - "Uma vez {story}."
+
+# ========================================
+# VOCABULÁRIO E LINGUAGEM
+# ========================================
+vocabulary_rules:
+  # Palavras proibidas (baseado na análise)
+  banned_words:
+    - "compre já"
+    - "oferta imperdível"
+    - "clique aqui"
+    - "não perca"
+    - "última chance"
+  
+  # Palavras de poder (baseado nos textos reais)
+  power_words:
+    - "imagine"  # Cria visualização
+    - "descubra"  # Curiosidade
+    - "revolucionário"  # Impacto
+    - "exclusivo"  # Valor
+    - "comprovado"  # Credibilidade
+  
+  # Jargão a evitar
+  avoid_jargon:
+    - "sinergia"
+    - "paradigma"
+    - "escalabilidade"
+    - "otimização"
+    - "implementação"
+
+# ========================================
+# ESTRUTURA DE CONTEÚDO
+# ========================================
+content_structure:
+  # Abertura (baseado nos 33 textos)
+  opening_patterns:
+    - "Salve rapaziada, aqui é o {author_name}, direto {location_context} e hoje eu quero {action_intent} sobre {topic}."
+    - "Salve rapaziada, aqui é o {author_name} e no dia de hoje eu não vou reagir a {topic}. Eu quero trazer peças de informação."
+  
+  # Desenvolvimento
+  development:
+    use_examples: true
+    include_data: true
+    tell_stories: true
+    ask_questions: true
+  
+  # Conclusão
+  conclusion_patterns:
+    - "Cara, {main_lesson}. Beleza? Então, {next_steps}."
+    - "Basicamente, {summary}. Entendeu? {final_thought}."
+    - "E aí, {question_to_audience}? Deixa aí nos comentários."
+
+# ========================================
+# PSICOLOGIA COGNITIVA
+# ========================================
+cognitive_psychology:
+  # Princípios de persuasão
+  use_social_proof: true  # "mais de 150.000 alunos"
+  create_scarcity: true  # "limitado", "exclusivo"
+  establish_authority: true  # "eu já li mais de 1500 livros"
+  build_reciprocity: true  # Dar valor antes de pedir
+  
+  # Heurísticas mentais
+  use_anchoring: true  # Números de referência
+  leverage_loss_aversion: true  # "você não vai perder"
+  create_availability_heuristic: true  # "lembre-se de quando"
+  use_confirmation_bias: true  # "como você já sabe"
+
+# ========================================
+# NEUROLINGUÍSTICA
+# ========================================
+neurolinguistics:
+  # Palavras que ativam o cérebro (baseado nos textos)
+  brain_trigger_words:
+    - "novo"
+    - "descoberta"
+    - "revolucionário"
+    - "exclusivo"
+    - "limitado"
+    - "urgente"
+    - "secreto"
+    - "revelado"
+  
+  # Técnicas de programação neurolinguística
+  use_embedded_commands: true  # Comandos sutis
+  create_pacing_and_leading: true  # Ritmo e direcionamento
+  use_linguistic_presuppositions: true  # Pressuposições linguísticas
+  apply_milton_model: true  # Linguagem vaga e hipnótica
+
+# ========================================
+# STORYTELLING AVANÇADO
+# ========================================
+advanced_storytelling:
+  # Estrutura narrativa
+  narrative_structure:
+    use_hero_journey: true
+    include_conflict: true
+    show_transformation: true
+    end_with_lesson: true
+  
+  # Elementos narrativos (baseado nos textos reais)
+  narrative_elements:
+    personal_experiences: true  # "Eu quando tinha 19 anos"
+    cultural_references: true  # "geração de ouro do Barcelona"
+    data_stories: true  # "E olha que impressionante..."
+    emotional_arcs: true  # Jornada emocional
+  
+  # Técnicas de storytelling
+  storytelling_techniques:
+    - "Era tipo {comparison} e o pessoal que estava {situation}."
+    - "Nessa época {time_context} era tipo, {description}."
+    - "Uma vez {story}."
+    - "Eu lembro que {memory}."
+
+# ========================================
+# LINGUAGEM CORPORAL DO TEXTO
+# ========================================
+text_body_language:
+  # Pausas e respiração
+  breathing_room:
+    use_paragraph_breaks: true
+    include_white_space: true
+    create_rhythm: true
+  
+  # Ênfase e intensidade
+  emphasis_techniques:
+    use_italics: true
+    use_bold_sparingly: true
+    use_quotation_marks: true
+    use_caps_sparingly: true
+
+# ========================================
+# ADAPTAÇÃO CULTURAL
+# ========================================
+cultural_adaptation:
+  # Referências culturais (baseado nos textos)
+  cultural_references:
+    futebol:
+      - "geração de ouro do Barcelona"
+      - "Tictaca, Messi, Chav, Niesta"
+      - "Flamengo"
+    economia:
+      - "centenas de milhões de reais"
+      - "valuation da empresa"
+    tecnologia:
+      - "inteligência artificial"
+      - "Power BI, Python, JavaScript"
+  
+  # Adaptação regional
+  regional_adaptation:
+    use_local_references: true
+    include_cultural_context: true
+    respect_cultural_sensitivity: true
+
+# ========================================
+# RITMO E TIMING
+# ========================================
+rhythm_and_timing:
+  # Variação de ritmo
+  rhythm_variation:
+    short_sentences: 0.3  # 30% frases curtas
+    medium_sentences: 0.5  # 50% frases médias
+    long_sentences: 0.2   # 20% frases longas
+  
+  # Timing de informações
+  information_timing:
+    hook_first: true  # Gancho no início
+    build_tension: true  # Construir tensão
+    release_tension: true  # Liberar tensão
+    end_strong: true  # Finalizar forte
+
+# ========================================
+# ENGAGEMENT MULTISSENSORIAL
+# ========================================
+multisensory_engagement:
+  # Apele aos sentidos
+  sensory_appeals:
+    visual: true  # "imagine", "olha só"
+    auditory: true  # "escuta", "sons"
+    tactile: true  # "sinta", "toque"
+    olfactory: true  # "cheiro", "aroma"
+    gustatory: true  # "sabor", "gosto"
+  
+  # Linguagem sensorial
+  sensory_language:
+    - "imagine você tomando um café"
+    - "sinta a diferença"
+    - "ouça o que eu vou te contar"
+
+# ========================================
+# PERSONALIZAÇÃO AVANÇADA
+# ========================================
+advanced_personalization:
+  # Segmentação por audiência
+  audience_segmentation:
+    age_groups:
+      young_adults:  # 18-25
+        formality: 5
+        use_slang: true
+        reference_pop_culture: true
+      adults:  # 26-40
+        formality: 7
+        use_professional_examples: true
+        reference_career: true
+      mature_adults:  # 40+
+        formality: 8
+        use_life_experience: true
+        reference_family: true
+  
+  # Adaptação por tópico
+  topic_adaptation:
+    finance:
+      use_numbers: true
+      reference_money: true
+      use_investment_language: true
+    technology:
+      use_tech_terms: true
+      reference_innovation: true
+      use_future_language: true
+    lifestyle:
+      use_personal_stories: true
+      reference_daily_life: true
+      use_emotional_language: true
+
+# ========================================
+# VALIDAÇÃO EMOCIONAL
+# ========================================
+emotional_validation:
+  # Reconhecer sentimentos
+  acknowledge_emotions: true
+  validate_experiences: true
+  show_empathy: true
+  
+  # Linguagem de validação
+  validation_phrases:
+    - "eu entendo como você se sente"
+    - "é normal sentir isso"
+    - "muitas pessoas passam por isso"
+    - "você não está sozinho nisso"
+
+# ========================================
+# LINGUAGEM INCLUSIVA
+# ========================================
+inclusive_language:
+  # Pronomes inclusivos
+  use_inclusive_pronouns: true
+  avoid_gender_assumptions: true
+  use_neutral_language: true
+  
+  # Representação diversa
+  include_diverse_examples: true
+  avoid_stereotypes: true
+  celebrate_differences: true
+
+# ========================================
+# CALLS TO ACTION HUMANIZADOS
+# ========================================
+humanized_ctas:
+  # CTAs baseados nos textos reais
+  video_engagement:
+    - "Antes da gente pular pro vídeo, eu peço encarecidamente para você dar o like e se inscrever nesse canal."
+    - "Deu o like, se inscreveu aí. Beleza? Então vamos para o vídeo."
+  
+  comment_engagement:
+    - "E aí, {question}? Deixa aí nos comentários."
+    - "E eu faço questão de ler os comentários porque o público aqui é extremamente qualificado."
+  
+  sponsor_acknowledgment:
+    - "Antes de entrar no assunto vídeo, eu quero dar aí os agradecimentos aos patrocinadores desse canal."
+
+# ========================================
+# FEEDBACK E ITERAÇÃO
+# ========================================
+feedback_and_iteration:
+  # Solicitar feedback
+  request_feedback: true
+  encourage_comments: true
+  respond_to_audience: true
+  
+  # Melhoria contínua
+  track_engagement: true
+  analyze_performance: true
+  adapt_based_on_data: true
+
+# ========================================
+# GESTÃO DE CRISES
+# ========================================
+crisis_management:
+  # Comunicação em crises
+  acknowledge_issues: true
+  take_responsibility: true
+  provide_solutions: true
+  maintain_transparency: true
+  
+  # Linguagem de crise
+  crisis_language:
+    - "eu reconheço que"
+    - "vou trabalhar para"
+    - "estou comprometido com"
+    - "juntos podemos"
+
+# ========================================
+# INOVAÇÃO E CRIATIVIDADE
+# ========================================
+innovation_and_creativity:
+  # Experimentação
+  try_new_formats: true
+  test_different_tones: true
+  explore_new_topics: true
+  
+  # Criatividade
+  use_metaphors: true
+  create_analogies: true
+  use_visual_language: true
+  include_humor: true
+
+# ========================================
+# MÉTRICAS DE SUCESSO
+# ========================================
+success_metrics:
+  # Métricas de engajamento
+  engagement_rate: '>80%'  # Taxa de engajamento
+  time_on_content: '>2_minutes'  # Tempo de leitura
+  share_rate: '>15%'  # Taxa de compartilhamento
+  comment_quality: 'high'  # Qualidade dos comentários
+  
+  # Métricas de conexão
+  emotional_connection: 'strong'  # Conexão emocional
+  trust_level: 'high'  # Nível de confiança
+  relatability_score: '>90%'  # Pontuação de identificação
+  authenticity_rating: '>95%'  # Avaliação de autenticidade
+
+# ========================================
+# EXEMPLOS PRÁTICOS
+# ========================================
+practical_examples:
+  # Exemplo de texto humanizado
+  example_humanized_text: |
+    "Imagine você tomando um café enquanto descobre como a IA pode simplificar sua rotina.
+    Já pensou em ter mais tempo para o que realmente importa? Vamos explorar isso juntos...
+    
+    Cara, eu sou suspeito em falar, eu fiz muito isso, muito. Meu patrimônio hoje em dia 
+    poderia ter sido muito maior se eu não tivesse essa necessidade de ostentar.
+    
+    Então, basicamente, o que eu quero te mostrar é como {topic} pode transformar sua vida.
+    E aí, entendeu? Deixa aí nos comentários o que você achou."
+  
+  # Exemplo de estrutura de vídeo
+  video_structure_example:
+    opening: "Salve rapaziada, aqui é o {author_name}, direto {location_context} e hoje eu quero {action_intent} sobre {topic}."
+    hook: "Cara, presta muita atenção esse vídeo no dia de hoje, especialmente se você tá aí {target_audience}."
+    development: "E nessa época {time_context} era tipo, {description}. Era tipo {comparison} e o pessoal que estava {situation}."
+    conclusion: "Basicamente, {summary}. Entendeu? {final_thought}. E aí, {question_to_audience}? Deixa aí nos comentários."
+  
+  # Exemplo de storytelling
+  storytelling_example:
+    personal_story: "Eu quando tinha {age} anos, eu {action}. E nessa época {time_context} era tipo, {description}."
+    data_story: "E olha que impressionante. Então, a gente começa esse gráfico com {number1} e a gente termina esse gráfico com {number2}."
+    cultural_reference: "Era tipo a geração de ouro do Barcelona com Tictaca, Messi, Chav, Niesta."
+
+# ========================================
+# COMO USAR ESTE ARQUIVO
+# ========================================
+usage_instructions:
+  # No humanized_writer.py
+  humanized_writer_usage: |
+    def humanize(self, topic: str) -> str:
+        max_words = self.writing_rules["linguistic_structure"]["sentence_length"]["max_words"]
+        tone = self.writing_rules["tone"]
+        formality = self.writing_rules["tone_adaptation"]["formality_level"]
+        
+        # Aplicar regras de estrutura
+        sentences = self._create_sentences(topic, max_words)
+        
+        # Aplicar regras de tom
+        humanized_text = self._apply_tone(sentences, tone, formality)
+        
+        # Aplicar regras de engajamento
+        final_text = self._add_engagement_elements(humanized_text)
+        
+        return final_text
+  
+  # No automated_reviewer.py
+  automated_reviewer_usage: |
+    def validate_text(self, text: str) -> bool:
+        # Verificar palavras proibidas
+        banned_words = self.writing_rules["vocabulary_rules"]["banned_words"]
+        for word in banned_words:
+            if word in text.lower():
+                return False
+        
+        # Verificar comprimento de frases
+        max_words = self.writing_rules["linguistic_structure"]["sentence_length"]["max_words"]
+        sentences = text.split('.')
+        for sentence in sentences:
+            if len(sentence.split()) > max_words:
+                return False
+        
+        # Verificar uso de segunda pessoa
+        if not self.writing_rules["human_language"]["use_second_person"]:
+            if "você" not in text.lower():
+                return False
+        
+        return True
+  
+  # Validação com ferramentas externas
+  external_validation: |
+    # Use ferramentas como:
+    # - Hemingway Editor para legibilidade
+    # - Readable.io para análise de texto
+    # - Grammarly para gramática
+    # - Yoast para SEO e legibilidade
