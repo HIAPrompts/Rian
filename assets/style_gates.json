@@ -1,6 +1,0 @@
-{
-  "min_words": 80,
-  "min_sentences": 5,
-  "min_paragraphs": 2,
-  "cadence_target": [15, 25]
-}
